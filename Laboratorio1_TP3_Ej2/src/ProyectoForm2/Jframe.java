@@ -26,15 +26,16 @@ public class Jframe extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        bgMedida = new javax.swing.ButtonGroup();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        TxtTempGradCent = new javax.swing.JTextField();
-        jRButtonFahrenheit = new javax.swing.JRadioButton();
-        jLabel2 = new javax.swing.JLabel();
-        jRButtonCelsius = new javax.swing.JRadioButton();
-        jRButtonKelvin = new javax.swing.JRadioButton();
-        jRButtonRadianes = new javax.swing.JRadioButton();
+        lblTitulo = new javax.swing.JLabel();
+        txtGrados = new javax.swing.JTextField();
+        rbFahrenheit = new javax.swing.JRadioButton();
+        lblTemperatura = new javax.swing.JLabel();
+        rbCelsius = new javax.swing.JRadioButton();
+        rbKelvin = new javax.swing.JRadioButton();
+        rbRadianes = new javax.swing.JRadioButton();
         btnConvertir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,25 +46,30 @@ public class Jframe extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel1.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
-        jLabel1.setText("    Conversor de temperaturas");
-        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        lblTitulo.setFont(new java.awt.Font("The Bold Font", 0, 18)); // NOI18N
+        lblTitulo.setText("    Conversor de temperaturas");
+        lblTitulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        TxtTempGradCent.addActionListener(new java.awt.event.ActionListener() {
+        txtGrados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtTempGradCentActionPerformed(evt);
+                txtGradosActionPerformed(evt);
             }
         });
 
-        jRButtonFahrenheit.setText("A Fahrenheit");
+        bgMedida.add(rbFahrenheit);
+        rbFahrenheit.setText("A Fahrenheit");
 
-        jLabel2.setText("Ingrese temperatura en Grados");
+        lblTemperatura.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        lblTemperatura.setText("Ingrese temperatura en Grados");
 
-        jRButtonCelsius.setText("A Celsius");
+        bgMedida.add(rbCelsius);
+        rbCelsius.setText("A Celsius");
 
-        jRButtonKelvin.setText("A Kelvin");
+        bgMedida.add(rbKelvin);
+        rbKelvin.setText("A Kelvin");
 
-        jRButtonRadianes.setText("A Radianes");
+        bgMedida.add(rbRadianes);
+        rbRadianes.setText("A Radianes");
 
         btnConvertir.setText("Convertir");
 
@@ -76,25 +82,25 @@ public class Jframe extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRButtonFahrenheit)
-                            .addComponent(jRButtonKelvin))
+                            .addComponent(rbFahrenheit)
+                            .addComponent(rbKelvin))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRButtonCelsius)
-                            .addComponent(jRButtonRadianes)))
+                            .addComponent(rbCelsius)
+                            .addComponent(rbRadianes)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)))
                 .addGap(50, 50, 50))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(135, 135, 135)
-                        .addComponent(TxtTempGradCent, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtGrados, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(108, 108, 108)
                         .addComponent(btnConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -104,19 +110,19 @@ public class Jframe extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jLabel2)
+                .addComponent(lblTemperatura)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TxtTempGradCent, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtGrados, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRButtonFahrenheit)
-                    .addComponent(jRButtonCelsius))
+                    .addComponent(rbFahrenheit)
+                    .addComponent(rbCelsius))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRButtonKelvin)
-                    .addComponent(jRButtonRadianes))
+                    .addComponent(rbKelvin)
+                    .addComponent(rbRadianes))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(btnConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
@@ -162,9 +168,9 @@ public class Jframe extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TxtTempGradCentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTempGradCentActionPerformed
+    private void txtGradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGradosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtTempGradCentActionPerformed
+    }//GEN-LAST:event_txtGradosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,15 +208,16 @@ public class Jframe extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField TxtTempGradCent;
+    private javax.swing.ButtonGroup bgMedida;
     private javax.swing.JButton btnConvertir;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRButtonCelsius;
-    private javax.swing.JRadioButton jRButtonFahrenheit;
-    private javax.swing.JRadioButton jRButtonKelvin;
-    private javax.swing.JRadioButton jRButtonRadianes;
+    private javax.swing.JLabel lblTemperatura;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JRadioButton rbCelsius;
+    private javax.swing.JRadioButton rbFahrenheit;
+    private javax.swing.JRadioButton rbKelvin;
+    private javax.swing.JRadioButton rbRadianes;
+    private javax.swing.JTextField txtGrados;
     // End of variables declaration//GEN-END:variables
 }

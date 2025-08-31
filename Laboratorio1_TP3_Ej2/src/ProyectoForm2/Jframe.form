@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="bgMedida">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="title" type="java.lang.String" value="TP3 Grupo 6  De Celcius a Fahrenheit"/>
@@ -88,18 +92,18 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jRButtonFahrenheit" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRButtonKelvin" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbFahrenheit" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbKelvin" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jRButtonCelsius" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRButtonRadianes" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbCelsius" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbRadianes" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jLabel2" min="-2" pref="196" max="-2" attributes="0"/>
+                              <Component id="lblTemperatura" min="-2" pref="196" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -109,11 +113,11 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" pref="282" max="-2" attributes="0"/>
+                              <Component id="lblTitulo" min="-2" pref="282" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
-                              <Component id="TxtTempGradCent" min="-2" pref="76" max="-2" attributes="0"/>
+                              <Component id="txtGrados" min="-2" pref="76" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
@@ -128,20 +132,20 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="lblTitulo" min="-2" pref="36" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblTemperatura" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="TxtTempGradCent" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="txtGrados" min="-2" pref="33" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRButtonFahrenheit" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRButtonCelsius" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbFahrenheit" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbCelsius" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jRButtonKelvin" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRButtonRadianes" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbKelvin" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbRadianes" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="39" max="32767" attributes="0"/>
                       <Component id="btnConvertir" min="-2" pref="40" max="-2" attributes="0"/>
@@ -151,7 +155,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel1">
+            <Component class="javax.swing.JLabel" name="lblTitulo">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="The Bold Font" size="18" style="0"/>
@@ -164,33 +168,48 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="TxtTempGradCent">
+            <Component class="javax.swing.JTextField" name="txtGrados">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtTempGradCentActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtGradosActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRButtonFahrenheit">
+            <Component class="javax.swing.JRadioButton" name="rbFahrenheit">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="bgMedida"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="A Fahrenheit"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel2">
+            <Component class="javax.swing.JLabel" name="lblTemperatura">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="12" style="2"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Ingrese temperatura en Grados"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRButtonCelsius">
+            <Component class="javax.swing.JRadioButton" name="rbCelsius">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="bgMedida"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="A Celsius"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRButtonKelvin">
+            <Component class="javax.swing.JRadioButton" name="rbKelvin">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="bgMedida"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="A Kelvin"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRButtonRadianes">
+            <Component class="javax.swing.JRadioButton" name="rbRadianes">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="bgMedida"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="A Radianes"/>
               </Properties>
             </Component>
