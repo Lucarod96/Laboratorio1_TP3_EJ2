@@ -4,6 +4,8 @@
  */
 package ProyectoForm2;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author lauch
@@ -72,6 +74,11 @@ public class Jframe extends javax.swing.JFrame {
         rbRadianes.setText("A Radianes");
 
         btnConvertir.setText("Convertir");
+        btnConvertir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConvertirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -172,6 +179,34 @@ public class Jframe extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtGradosActionPerformed
 
+    private void btnConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConvertirActionPerformed
+        // TODO add your handling code here:
+        
+        try {
+            double celsius = Double.parseDouble(txtGrados.getText());
+
+            String resultado = "";
+
+            if (rbFahrenheit.isSelected()) {
+                double fahrenheit = celsius * 9 / 5 + 32;
+                resultado = "La temperatura en grados Farenheit es: " + fahrenheit;
+            } else if (rbCelsius.isSelected()) {
+                resultado = "La temperatura en grados Celsius es: " + celsius;
+            } else if (rbKelvin.isSelected()) {
+                double kelvin = celsius + 273.15;
+                resultado = "Latemperatura en grados Kelvin es: " + kelvin;
+            } else if (rbRadianes.isSelected()) {
+                double radianes = (celsius - 273.15) * 9 / 5 - 459.67;
+                resultado = "Temperatura convertida a Radianes: " + radianes;
+            } else {
+                resultado = "Por favor, selecciona una unidad para convertir.";
+            }
+            JOptionPane.showMessageDialog(this, resultado);
+            } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "ingrese un numero valido.", "Error", JOptionPane.ERROR_MESSAGE);
+        }  
+    }//GEN-LAST:event_btnConvertirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -200,10 +235,8 @@ public class Jframe extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Jframe().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Jframe().setVisible(true);
         });
     }
 
