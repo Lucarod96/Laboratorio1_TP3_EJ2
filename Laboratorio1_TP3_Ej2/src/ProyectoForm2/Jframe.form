@@ -60,7 +60,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="50" max="32767" attributes="0"/>
+                  <EmptySpace pref="52" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -69,7 +69,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="32" max="32767" attributes="0"/>
+                  <EmptySpace pref="30" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -98,7 +98,7 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="rbCelsius" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rbRadianes" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbRankine" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
@@ -124,9 +124,11 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
                               <Component id="btnConvertir" min="-2" pref="120" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jBtmLimpiar" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="30" max="32767" attributes="0"/>
+                      <EmptySpace pref="22" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -150,10 +152,13 @@
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="rbKelvin" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbRadianes" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbRankine" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="39" max="32767" attributes="0"/>
-                      <Component id="btnConvertir" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace pref="41" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnConvertir" pref="40" max="32767" attributes="0"/>
+                          <Component id="jBtmLimpiar" max="32767" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -178,20 +183,20 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtGradosActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="rbFahrenheit">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="bgMedida"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="A Fahrenheit"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="lblTemperatura">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="2"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ingrese temperatura en Grados"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="rbFahrenheit">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="bgMedida"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="A Fahrenheit"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="rbCelsius">
@@ -213,12 +218,12 @@
                 <Property name="text" type="java.lang.String" value="A Kelvin"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="rbRadianes">
+            <Component class="javax.swing.JRadioButton" name="rbRankine">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="bgMedida"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="A Radianes"/>
+                <Property name="text" type="java.lang.String" value="A Rankine"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnConvertir">
@@ -233,10 +238,10 @@
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
-                    <StringItem index="0" value="Grados"/>
-                    <StringItem index="1" value="Celsius"/>
-                    <StringItem index="2" value="Kelvin"/>
-                    <StringItem index="3" value="Fahrenheit"/>
+                    <StringItem index="0" value="Celsius"/>
+                    <StringItem index="1" value="Kelvin"/>
+                    <StringItem index="2" value="Fahrenheit"/>
+                    <StringItem index="3" value="Rankine"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -246,6 +251,14 @@
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
+            </Component>
+            <Component class="javax.swing.JButton" name="jBtmLimpiar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Limpiar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtmLimpiarActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

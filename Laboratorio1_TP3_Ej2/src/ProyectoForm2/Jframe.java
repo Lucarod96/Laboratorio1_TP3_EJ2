@@ -1,15 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package ProyectoForm2;
 
 import javax.swing.JOptionPane;
+import javax.swing.text.*;
+import java.text.DecimalFormatSymbols;
 
-/**
- *
- * @author lauch
- */
+/* * @author
+Luis Ezequiel Sosa
+Lucas Saidman
+Gimenez Diego Ruben
+Carlos German Mecias Giacomelli
+Tomas Migliozzi Badani
+Luca Rodrigaño
+
+Proyecto Conversor de temperaturas - TP3 Grupo 6 
+Conversor de temperaturas entre Celsius, Fahrenheit, Kelvin y Rankine */
 public class Jframe extends javax.swing.JFrame {
 
     /**
@@ -33,13 +37,14 @@ public class Jframe extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
         txtGrados = new javax.swing.JTextField();
-        rbFahrenheit = new javax.swing.JRadioButton();
         lblTemperatura = new javax.swing.JLabel();
+        rbFahrenheit = new javax.swing.JRadioButton();
         rbCelsius = new javax.swing.JRadioButton();
         rbKelvin = new javax.swing.JRadioButton();
-        rbRadianes = new javax.swing.JRadioButton();
+        rbRankine = new javax.swing.JRadioButton();
         btnConvertir = new javax.swing.JButton();
         selectorDeTemperatura = new javax.swing.JComboBox<>();
+        jBtmLimpiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("TP3 Grupo 6  De Celcius a Fahrenheit");
@@ -59,11 +64,11 @@ public class Jframe extends javax.swing.JFrame {
             }
         });
 
-        bgMedida.add(rbFahrenheit);
-        rbFahrenheit.setText("A Fahrenheit");
-
         lblTemperatura.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         lblTemperatura.setText("Ingrese temperatura en Grados");
+
+        bgMedida.add(rbFahrenheit);
+        rbFahrenheit.setText("A Fahrenheit");
 
         bgMedida.add(rbCelsius);
         rbCelsius.setText("A Celsius");
@@ -76,8 +81,8 @@ public class Jframe extends javax.swing.JFrame {
         bgMedida.add(rbKelvin);
         rbKelvin.setText("A Kelvin");
 
-        bgMedida.add(rbRadianes);
-        rbRadianes.setText("A Radianes");
+        bgMedida.add(rbRankine);
+        rbRankine.setText("A Rankine");
 
         btnConvertir.setText("Convertir");
         btnConvertir.addActionListener(new java.awt.event.ActionListener() {
@@ -86,10 +91,17 @@ public class Jframe extends javax.swing.JFrame {
             }
         });
 
-        selectorDeTemperatura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Grados", "Celsius", "Kelvin", "Fahrenheit" }));
+        selectorDeTemperatura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Celsius", "Kelvin", "Fahrenheit", "Rankine" }));
         selectorDeTemperatura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selectorDeTemperaturaActionPerformed(evt);
+            }
+        });
+
+        jBtmLimpiar.setText("Limpiar");
+        jBtmLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtmLimpiarActionPerformed(evt);
             }
         });
 
@@ -107,7 +119,7 @@ public class Jframe extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rbCelsius)
-                            .addComponent(rbRadianes)))
+                            .addComponent(rbRankine)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,8 +136,10 @@ public class Jframe extends javax.swing.JFrame {
                         .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(108, 108, 108)
-                        .addComponent(btnConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                        .addComponent(btnConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtmLimpiar)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,9 +159,11 @@ public class Jframe extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbKelvin)
-                    .addComponent(rbRadianes))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(btnConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rbRankine))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnConvertir, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(jBtmLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(27, 27, 27))
         );
 
@@ -160,14 +176,14 @@ public class Jframe extends javax.swing.JFrame {
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -197,78 +213,137 @@ public class Jframe extends javax.swing.JFrame {
 
     private void btnConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConvertirActionPerformed
         // TODO add your handling code here:
-        String seleccionTemperatura= (String) selectorDeTemperatura.getSelectedItem(); //Obtengo el valor de el selector de temperatura
-      
-        
-        if(seleccionTemperatura.equals("Grados")){
-             
-        } else if(seleccionTemperatura.equals("Celsius")){
-            
-           try {
-                double celsius = Double.parseDouble(txtGrados.getText());
+        String seleccionTemperatura = (String) selectorDeTemperatura.getSelectedItem(); //Obtengo el valor de el selector de temperatura
 
-                String resultado = "";
+        try {
+            double input = Double.parseDouble(txtGrados.getText());
+            String resultado = "";
+            double valueInCelsius;
 
-                if (rbFahrenheit.isSelected()) {
-                    double fahrenheit = celsiusAFahrenheit(celsius);
-                    resultado = "La temperatura en grados Farenheit es: " + fahrenheit;
-                } else if (rbCelsius.isSelected()) {
-                    resultado = "La temperatura en grados Celsius es: " + celsius;
-                } else if (rbKelvin.isSelected()) {
-                    double kelvin = celsius + 273.15;
-                    resultado = "La temperatura en grados Kelvin es: " + kelvin;
-                } else if (rbRadianes.isSelected()) {
-                    double radianes = (celsius - 273.15) * 9 / 5 - 459.67;
-                    resultado = "Temperatura convertida a Radianes: " + radianes;
-                } else {
-                    resultado = "Por favor, selecciona una unidad para convertir.";
-                }
-                JOptionPane.showMessageDialog(this, resultado);
-            } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Ingrese un numero valido.", "Error", JOptionPane.ERROR_MESSAGE);
-            
-        } 
-        }else if(seleccionTemperatura.equals("Kelvin")){
-           
-        }else if(seleccionTemperatura.equals("Fahrenheit")){
+            if (seleccionTemperatura.equals("Celsius")) {
+                valueInCelsius = input;
+            } else if (seleccionTemperatura.equals("Kelvin")) {
+                valueInCelsius = kelvinACelsius(input);
+            } else if (seleccionTemperatura.equals("Fahrenheit")) {
+                valueInCelsius = fahrenheitACelsius(input);
+            } else if (seleccionTemperatura.equals("Rankine")) {
+                valueInCelsius = rankineACelsius(input);
+            } else {
+                valueInCelsius = input;
+            }
 
+            if (rbFahrenheit.isSelected()) {
+                resultado = "La temperatura en Fahrenheit es: " + celsiusAFahrenheit(valueInCelsius);
+            } else if (rbCelsius.isSelected()) {
+                resultado = "La temperatura en Celsius es: " + valueInCelsius;
+            } else if (rbKelvin.isSelected()) {
+                resultado = "La temperatura en Kelvin es: " + celsiusAKelvin(valueInCelsius);
+            } else if (rbRankine.isSelected()) {
+                resultado = "La temperatura en Rankine es: " + celsiusARankine(valueInCelsius);
+            } else {
+                resultado = "Por favor, selecciona una unidad para convertir.";
+            }
+            JOptionPane.showMessageDialog(this, resultado);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Ingrese un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
     }//GEN-LAST:event_btnConvertirActionPerformed
 
     //CALCULOS PARA CADA CONVERISION
-
     //CELSIUS
-    private double celsiusAKelvin(Double c){return (c+273.15);}
-    private double celsiusAFahrenheit(Double c){return ((c*(9.0/5.0))+32);}
-    
+    private double celsiusAKelvin(Double c) {
+        return (c + 273.15);
+    }
+
+    private double celsiusAFahrenheit(Double c) {
+        return ((c * (9.0 / 5.0)) + 32);
+    }
+
     //KELVIN
-    private double kelvinAFahrenheit(Double k){return (k-273.15)*(9.0/5.0)+32;}
-    private double kelvinACelsius(Double k){return k-273.15;}
-    
+    private double kelvinAFahrenheit(Double k) {
+        return (k - 273.15) * (9.0 / 5.0) + 32;
+    }
+
+    private double kelvinACelsius(Double k) {
+        return k - 273.15;
+    }
+
     //FAHRENHEITS
-    private double fahrenheitACelsius(Double f){return (f-32)*(5.0/9.0);}
-    private double fahrenheitAKelvin(Double f){return (f-32)*(5.0/9.0)+273.15;}
-    
+    private double fahrenheitACelsius(Double f) {
+        return (f - 32) * (5.0 / 9.0);
+    }
+
+    private double fahrenheitAKelvin(Double f) {
+        return (f - 32) * (5.0 / 9.0) + 273.15;
+    }
+
+    //RANKINE
+    private double celsiusARankine(double c) {
+        return (c * 9.0 / 5.0) + 491.67;
+    }
+
+    private double kelvinARankine(double k) {
+        return k * 1.8;
+    }
+
+    private double fahrenheitARankine(double f) {
+        return f + 459.67;
+    }
+
+    private double rankineACelsius(double r) {
+        return (r - 491.67) * 5.0 / 9.0;
+    }
+
+    private double rankineAKelvin(double r) {
+        return r / 1.8;
+    }
+
+    private double rankineAFahrenheit(double r) {
+        return r - 459.67;
+    }
+
+    class NumericDocument extends PlainDocument {
+
+        @Override
+        public void insertString(int offs, String str, AttributeSet a) throws BadLocationException {
+            if (str == null) {
+                return;
+            }
+            char decimalSeparator = DecimalFormatSymbols.getInstance().getDecimalSeparator();
+            String validChars = "0123456789" + decimalSeparator + "-";
+            for (char c : str.toCharArray()) {
+                if (validChars.indexOf(c) == -1) {
+                    return;
+                }
+            }
+            super.insertString(offs, str, a);
+        }
+    }
+
     private void selectorDeTemperaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectorDeTemperaturaActionPerformed
         // TODO add your handling code here:
-        String seleccionTemperatura= (String) selectorDeTemperatura.getSelectedItem();
-      
-        if(seleccionTemperatura.equals("Grados")){
-           lblTemperatura.setText("Ingrese temperatura en grados");
-        } else if(seleccionTemperatura.equals("Celsius")){
-           lblTemperatura.setText("Ingrese temperatura en Celsius");
-        }else if(seleccionTemperatura.equals("Kelvin")){
-           lblTemperatura.setText("Ingrese temperatura en Kelvin");
-        }else if(seleccionTemperatura.equals("Fahrenheit")){
-           lblTemperatura.setText("Ingrese temperatura en Fahrenheit");
-        
+        String seleccionTemperatura = (String) selectorDeTemperatura.getSelectedItem();
+
+        if (seleccionTemperatura.equals("Grados")) {
+            lblTemperatura.setText("Ingrese temperatura en grados");
+        } else if (seleccionTemperatura.equals("Celsius")) {
+            lblTemperatura.setText("Ingrese temperatura en Celsius");
+        } else if (seleccionTemperatura.equals("Kelvin")) {
+            lblTemperatura.setText("Ingrese temperatura en Kelvin");
+        } else if (seleccionTemperatura.equals("Fahrenheit")) {
+            lblTemperatura.setText("Ingrese temperatura en Fahrenheit");
+
         }
     }//GEN-LAST:event_selectorDeTemperaturaActionPerformed
 
     private void rbCelsiusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbCelsiusActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbCelsiusActionPerformed
+
+    private void jBtmLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtmLimpiarActionPerformed
+        txtGrados.setText("");
+        bgMedida.clearSelection();
+    }//GEN-LAST:event_jBtmLimpiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -306,6 +381,7 @@ public class Jframe extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgMedida;
     private javax.swing.JButton btnConvertir;
+    private javax.swing.JButton jBtmLimpiar;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblTemperatura;
@@ -313,7 +389,7 @@ public class Jframe extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbCelsius;
     private javax.swing.JRadioButton rbFahrenheit;
     private javax.swing.JRadioButton rbKelvin;
-    private javax.swing.JRadioButton rbRadianes;
+    private javax.swing.JRadioButton rbRankine;
     private javax.swing.JComboBox<String> selectorDeTemperatura;
     private javax.swing.JTextField txtGrados;
     // End of variables declaration//GEN-END:variables
