@@ -11,6 +11,7 @@ Gimenez Diego Ruben
 Carlos German Mecias Giacomelli
 Tomas Migliozzi Badani
 Luca Rodrigaño
+Ignacio Rodriguez
 
 Proyecto Conversor de temperaturas - TP3 Grupo 6 
 Conversor de temperaturas entre Celsius, Fahrenheit, Kelvin y Rankine */
